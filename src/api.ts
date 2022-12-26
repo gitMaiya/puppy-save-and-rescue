@@ -137,7 +137,7 @@ export const getLostPets = ((async (event) => {
     let db = await init();
 
     // Select all of the pets in the DB
-    const result = db.exec("SELECT * FROM pets WHERE id NOT IN (SELECT pet_id FROM owners_pets");
+    const result = db.exec("SELECT * FROM pets WHERE id NOT IN (SELECT pet_id FROM owners_pets)");
 
     // Make the results a readable format
     const prettyRestults = serialize(result);
